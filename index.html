@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .sw-event {
+        width: 70%;
+        height: 500px;
+      }
+      .sw-event .swiper-button-next,
+      .swiper-button-prev {
+        color: blueviolet;
+        width: 10px !important;
+      }
+      .swiper-button-prev::after,
+      .swiper-button-next::after {
+        font-size: 10px;
+      }
+      body > div > div.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal.swiper-pagination-bullets-dynamic > span.swiper-pagination-bullet.swiper-pagination-bullet-active.swiper-pagination-bullet-active-main {
+        background-color: red !important;
+        width: 100px;
+        /* height: 10px;
+        border-radius: 0;
+        background: url(); */
+      }
+      .swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet,
+      .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+        background-color: rgb(249, 39, 231);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Swiper -->
+    <div class="swiper sw-event">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <!-- Initialize Swiper -->
+    <script>
+      let swEvent = new Swiper(".sw-event", {
+        navigation: {
+          nextEl: ".sw-event .swiper-button-next",
+          prevEl: ".sw-event .swiper-button-prev",
+        },
+        pagination: {
+          el: ".sw-event .swiper-pagination",
+          dynamicBullets: true,
+        },
+        autoplay: {
+          delay: 1500,
+          disableOnInteraction: false,
+        },
+        slidesPerView: 2,
+        // spaceBetween: 10,
+        loop:true,
+      });
+    </script>
+    <!-- 스와이퍼 그룹으로  -->
+  </body>
+</html>
